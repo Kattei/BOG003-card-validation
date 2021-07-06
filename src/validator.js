@@ -1,14 +1,5 @@
 const validator = {
-  mostrarTarjeta: function mostrarTarjeta(){
   
-    document.getElementById("contenedor").style.display = "block";
-    document.getElementById("principal").style.display = "none";
-    
-    
-  },
-  
-  
-
   isValid : function isValid(creditCardNumber) {
      let par = [];
      let imPar =  [];
@@ -34,12 +25,11 @@ const validator = {
         };
         resultado = par.reduce(suma,1)+imPar.reduce(suma,0);
         if (resultado % 10 == 0){
-          return true
+          return false;
         }
          else{
-           return false
-          
-         }
+           return true;
+          }
          
           
          },
@@ -50,13 +40,11 @@ const validator = {
                 return creditCardNumber;
               }                                  
               let lastFour = creditCardNumber.substr(-4);
-              let firstnNumber = creditCardNumber.slice(0, creditCardNumber.length-4).replace(/[0-9]/g, "#");
+              let firstnNumber = creditCardNumber.slice(0, creditCardNumber.length-4).replace(/./g, "#");
               return firstnNumber+lastFour;
-            }, 
-
-            limpiar: function limpiar(){
-             document.getElementById("newForm").reset();
             }
+
+           
             
           };
            

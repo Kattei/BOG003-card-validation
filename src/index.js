@@ -1,7 +1,8 @@
 import validator from './validator.js';
 
-document.getElementById("validar").addEventListener("click", function () {
-    validator.mostrarTarjeta();
+document.getElementById("validar").addEventListener("click", () => {
+    document.getElementById("contenedor").style.display = "block";
+    document.getElementById("principal").style.display = "none";
 
 });
 
@@ -37,8 +38,9 @@ document.getElementById('validar1').addEventListener("click", function() {
 
 });
 
-document.getElementById("validar2").addEventListener('click', function(){ 
-    validator.limpiar()
+document.getElementById("validar2").addEventListener('click', () => { 
+    document.getElementById("newForm").reset();
+    
    
 });
    

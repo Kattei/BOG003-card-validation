@@ -17,7 +17,7 @@
       <br>
 
     </header>
-    <main class="parrafo">
+  <main class="parrafo">
       <div id="pregunta">
 
         <p> ¿Cómo validar si una tarjeta de ayuda social del Banco Agrario es válida?</p><br>
@@ -28,8 +28,8 @@
           Presione en el boton de empezar a validar, esperamos que sea de su utilidad.</p> <br>
 
       </div>
-
-      <button id=validar type="button">Empezar a validar</button>
+    </main>
+      <button id="validar" type="button">Empezar a validar</button>
 
   </div>
 
@@ -48,14 +48,14 @@
         la tarjeta.</p>
       <p>3. Ingrese la fecha de vencimiento</p>
       <p>4. Dale click en el boton validar</p>
-      <button id=validar1 type="submit"> Validar</button>
+      <button id="validar1" type="submit"> Validar</button>
 
     </div>
     <form id="newForm">
     <div class="caja">
       <img src="tarjeta.png" alt="tarjeta" class="tarjeta">
       <div class="pt1"> <label for="tarjeta"> Inserte el numero de tarjeta </label><br>
-        <input type="text" id="card_number" maxlength="16">
+        <input type="text" id="card_number" maxlength="16" minlength="10">
       </div>
       <div class="pn2"><label for="nombre"> Inserte su nombre </label> <br>
         <input type="name" id="card_name">
@@ -75,7 +75,7 @@
 
 
 
-  </main>
+  
   <footer></footer>
   <script src="index.js" type="module"></script>
 </body>
