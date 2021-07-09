@@ -49,8 +49,9 @@ document.getElementById("validar2").addEventListener("click", () => {
     
    
 });
-// Agregar los meses
+// Agregar los meses, creacion del bucle
 for(let i = 1; i <= 12; i++){
+    //Crear la opcion
 	let opcion = document.createElement("option");
 	opcion.value = i;
 	opcion.innerText = i;
