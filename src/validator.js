@@ -1,40 +1,33 @@
 const validator = {
+  // Esta funcion valida el numero segun el algoritmo de luhn
+  isValid : function (creditCardNumber) {
+  let par = 0;
+  let impar = 0;
   
-  isValid : function isValid(creditCardNumber) {
-     let par = [];
-     let imPar =  [];
-     let resultado = 0;
+// Convirtiendo a array y reversando
+  creditCardNumber = creditCardNumber.split("").reverse();
+  for (let i = 0; i < creditCardNumber.length; i++){
+    //posiciones pares
+    if(i % 2 === 1){
+      //multiplicar la posicion por 2
+      creditCardNumber[i]= (creditCardNumber[i]*2);
+      //si es mayor que 10
+      if (creditCardNumber[i] >=10){
+        //convertir a string y nuevamenta a array
+        par = creditCardNumber[i].toString().split("");
+        //se suma la posicion 0 y 1
+        creditCardNumber[i] = parseInt(par[0])+parseInt(par[1]);
+      }
+    }
+    impar= impar+parseInt(creditCardNumber[i]);
+  }
+   let resultado = impar % 10 == 0 ? true : false;
+   return resultado;
 
-     creditCardNumber = Array.from(creditCardNumber).reverse();
-     for(let i in creditCardNumber){
-       creditCardNumber[i] = parseInt(creditCardNumber[i]);
-       if (i % 2 !==0) {
-        par.push(creditCardNumber[i]*2);
-        for(let c in par){
-          if(par[c] >9){
-            par[c] = (parseInt(par[c] % 10)) + (parseInt(par[c] / 10));
-          }
-        }
-       }
-       else {
-         imPar.push(creditCardNumber[i]);
-       }
-     }
-        const suma = (total,creditCardNumber) => {
-          return total+creditCardNumber;
-        };
-        resultado = par.reduce(suma,1)+imPar.reduce(suma,0);
-        if (resultado % 10 == 0){
-          return false;
-        }
-         else{
-           return true;
-          }
-         
-          
+
          },
         
-
+// Esta funcion enmascara los  numeros y solo permite ver los 4 ultimos
             maskify : function maskify(creditCardNumber){  
               if (creditCardNumber.length<4) {
                 return creditCardNumber;
@@ -50,6 +43,5 @@ const validator = {
            
           
   
-
 
 export default validator;
